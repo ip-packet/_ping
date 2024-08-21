@@ -1,6 +1,7 @@
 # S_PING
 ## about
-s_ping is a small copy of the ping command that sends ICMP_ECHO requests to network hosts
+s_ping: A lightweight utility designed to emulate a simplified version of the ping command. It provides basic network connectivity testing by sending ICMP echo requests to a specified host and displaying response times.
+While offering a core functionality, s_ping may have limitations compared to the full-featured ping command, such as missing advanced options or detailed statistics.
 ## requirements
 - linux
 - root privilege
@@ -8,7 +9,7 @@ s_ping is a small copy of the ping command that sends ICMP_ECHO requests to netw
 ```
 ./s_ping DEST [timeout]
   DEST: domain name/ipv4 address of the target host
-  timeout: number of seconds until host response
+  timeout: optional number of seconds until host response
 ```
 ## example output
 ```
