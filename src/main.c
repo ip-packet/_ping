@@ -6,6 +6,7 @@ _data	g_vars = {
 	.dest_ip = NULL,
 	.sent_packs = 0,
 	.recv_packs = 0,
+	.is_on = 0,
 	.st = {-1}
 };
 
@@ -13,10 +14,10 @@ _data	g_vars = {
 void	signal_handler(int sig_num) {
 	if (g_vars.sock > 0) close(g_vars.sock);
 	if (g_vars.dest) freeaddrinfo(g_vars.dest);
-	printf("quiting..\n");
+	printf("\nquiting..\n");
 	if (g_vars.dest_ip) {
 		printf("=== %s stats ===\n", g_vars.dest_ip);
-		printf("packets sent: %i, packet received: %i\n", g_vars.sent_packs, g_vars.recv_packs);
+		printf("packets sent: %i, packet received: %i\n", g_vars.sent_packs - g_vars.is_on, g_vars.recv_packs);
 		if (g_vars.st.tv_sec != -1) {
 			struct	timeval	en = {0};
 			gettimeofday(&en, NULL);

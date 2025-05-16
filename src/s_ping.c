@@ -31,13 +31,14 @@ void	_ping(struct timeval *tv)
 		_i = sendto(g_vars.sock, packet, icmphdr_size, 0, g_vars.dest->ai_addr, a_si);
 		if (_i < 0)	{ perror("sendto"); break; }
 		printf("%s%s\t%s%sicmp_echo%s %s : ", WHT, UND, NRM, WHT, NRM, g_vars.dest_ip);
+		g_vars.is_on = 1;
 
 		FD_ZERO(&r_set);
 		FD_SET(g_vars.sock, &r_set);
 		gettimeofday(&st, NULL);
 		_i = select(g_vars.sock + 1, &r_set, NULL, NULL, tv);
 		if (_i < 0)	{ perror("select"); break; }
-		if (_i)		g_vars.sent_packs += 1;
+		if (_i) 		g_vars.sent_packs += 1;
 		else {
 			printf("## timeout (%is) retrying in 1s..\n", tv->tv_sec);
 			sleep(1);
@@ -61,6 +62,7 @@ void	_ping(struct timeval *tv)
 			memcpy(packet + _j, sec_packet, _i);
 			_j += _i;
 		}
+		g_vars.is_on = 0;
 		if (_i < 0) break ;
 		g_vars.recv_packs += 1;
 

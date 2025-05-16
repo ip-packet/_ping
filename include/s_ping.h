@@ -29,6 +29,7 @@ typedef	struct {
 	char		*dest_ip;
 	int		sent_packs;
 	int		recv_packs;
+	int		is_on;
 	struct	timeval	st;
 }	_data;
 
