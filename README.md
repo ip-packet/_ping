@@ -1,6 +1,6 @@
 # *`S_PING`*
 ## about
-a lightweight ping utility. It provides basic network connectivity testing by sending ICMP echo requests to a specified host and displaying response times.
+a lightweight ping utility to test network connectivity by sending ICMP echo requests to a specified host and displaying response times.
 ## requirements
 - linux
 - root privilege
