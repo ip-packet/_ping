@@ -1,4 +1,4 @@
-# include "s_ping.h"
+# include <_ping.h> 
 
 unsigned	short csum(unsigned short *buff, int words_n) {
 	unsigned	short	sum = 0;
@@ -40,7 +40,7 @@ void	_ping(struct timeval *tv)
 		if (_i < 0)	{ perror("select"); break; }
 		if (_i) 		g_vars.sent_packs += 1;
 		else {
-			printf("## timeout (%is) retrying in 1s..\n", tv->tv_sec);
+			printf("## timeout (%lis) retrying in 1s..\n", tv->tv_sec);
 			sleep(1);
 			continue ;
 	         	}
