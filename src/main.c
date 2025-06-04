@@ -1,4 +1,4 @@
-#include "s_ping.h"
+#include <_ping.h> 
 
 _data	g_vars = {
 	.sock = -1,
@@ -29,10 +29,10 @@ void	signal_handler(int sig_num) {
 }
 
 void	print_usage() {
-	printf("S_PING\n");
+	printf("_PING\n");
 	printf("- simple ping program to test the connectivity\n\tof various hosts on the internet\n");
 	printf("USAGE:\n");
-	printf("./s_ping DES [time]\n");
+	printf("./_ping DES [time]\n");
 	printf("\tDES: ip address of the target host or its FQDN\n");
 	printf("\ttime: optional timeout for the host response in seconds, default 3\n");
 	exit(1);
