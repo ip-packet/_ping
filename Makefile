@@ -2,7 +2,7 @@ CC = cc
 SRC = $(wildcard src/*.c)
 HR = $(wildcard include/*.h)
 OBJ = $(patsubst src/%.c, build/%.o, $(SRC))
-NAME = s_ping
+NAME = _ping
 
 all: $(NAME)
 

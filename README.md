@@ -1,18 +1,20 @@
-# *`S_PING`*
-## about
-a lightweight ping utility to test network connectivity by sending ICMP echo requests to a specified host and displaying response times.
-## requirements
-- linux
-- root privilege
-## usage
+# *`_ping`*
+
 ```
-./s_ping DEST [timeout]
+test network connectivity by sending ICMP echo requests to a specified host and displaying response times.
+```
+## usage
+
+```
+./_ping DEST [timeout]
   DEST: domain name/ipv4 address of the target host
   timeout: optional number of seconds until host response
 ```
-## example output
+
+## output
+
 ```
-$ ./s_ping 1337.ma
+$ ./_ping 1337.ma
 1337.ma (104.18.32.248)
 	icmp_echo 104.18.32.248 : icmp_echoreply t=55.701 ms, echo.id=13830, icmp_seq=0
 	icmp_echo 104.18.32.248 : icmp_echoreply t=58.195 ms, echo.id=13830, icmp_seq=1
@@ -25,3 +27,8 @@ $ ./s_ping 1337.ma
 packets sent: 7, packet received: 7
 time: 1230.085 ms
 ```
+
+## requirements
+- linux
+- root privilege
+

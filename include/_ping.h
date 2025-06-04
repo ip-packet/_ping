@@ -1,5 +1,5 @@
-#ifndef S_PING_H
-# define S_PING_H
+#ifndef _PING_H
+# define _PING_H
 
 # include <stdio.h>
 # include <errno.h>
