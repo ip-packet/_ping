@@ -1,7 +1,8 @@
 # *`_ping`*
 
 ```
-test network connectivity by sending ICMP echo requests to a specified host and displaying response times.
+test network connectivity by sending ICMP echo requests
+to a specified host and displaying response times.
 ```
 ## usage
 
