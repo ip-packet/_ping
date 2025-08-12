@@ -64,7 +64,15 @@ struct	addrinfo	*getAddr(char *host, char **dest) {
 	return	res;
 }
 
+int	check_root_privileges(uid_t r, uid_t e, uid_t s) {
+	return getresuid(&r, &e, &s) < 0||e;
+}
+
 int		main(int c, char **v) {
+	if (check_root_privileges(0,0,0)) {
+		printf("error: need root privileges\n");
+		exit(1);
+	}
 
 	if (c < 2 || c > 3 || (c==3 && !is_digit(v[2])))
 		print_usage();
